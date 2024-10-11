@@ -418,7 +418,7 @@ if (!function_exists('aiverse_pagination')) {
 function aiverse_breadcrumb_bg_color()
 {
     $color_code = get_theme_mod('aiverse_breadcrumb_bg_color', '#222');
-    wp_enqueue_style('aiverse-custom', AIVERSE_THEME_CSS_DIR . 'aiverse-custom.css', []);
+    wp_enqueue_style('aiverse-custom', AIVERSE_THEME_CSS_DIR . 'theme-custom.css', []);
     if ($color_code != '') {
         $custom_css = '';
         $custom_css .= ".breadcrumb-bg.gray-bg{ background: " . $color_code . "}";
@@ -432,7 +432,7 @@ add_action('wp_enqueue_scripts', 'aiverse_breadcrumb_bg_color');
 function aiverse_breadcrumb_spacing()
 {
     $padding_px = get_theme_mod('aiverse_breadcrumb_spacing', '160px');
-    wp_enqueue_style('aiverse-custom', AIVERSE_THEME_CSS_DIR . 'aiverse-custom.css', []);
+    wp_enqueue_style('aiverse-custom', AIVERSE_THEME_CSS_DIR . 'theme-custom.css', []);
     if ($padding_px != '') {
         $custom_css = '';
         $custom_css .= ".breadcrumb-spacing{ padding-top: " . $padding_px . "}";
@@ -446,7 +446,7 @@ add_action('wp_enqueue_scripts', 'aiverse_breadcrumb_spacing');
 function aiverse_breadcrumb_bottom_spacing()
 {
     $padding_px = get_theme_mod('aiverse_breadcrumb_bottom_spacing', '160px');
-    wp_enqueue_style('aiverse-custom', AIVERSE_THEME_CSS_DIR . 'aiverse-custom.css', []);
+    wp_enqueue_style('aiverse-custom', AIVERSE_THEME_CSS_DIR . 'theme-custom.css', []);
     if ($padding_px != '') {
         $custom_css = '';
         $custom_css .= ".breadcrumb-spacing{ padding-bottom: " . $padding_px . "}";
@@ -461,7 +461,7 @@ add_action('wp_enqueue_scripts', 'aiverse_breadcrumb_bottom_spacing');
 // function aiverse_scrollup_switch()
 // {
 //     $scrollup_switch = get_theme_mod('aiverse_scrollup_switch', false);
-//     wp_enqueue_style('aiverse-custom', AIVERSE_THEME_CSS_DIR . 'aiverse-custom.css', []);
+//     wp_enqueue_style('aiverse-custom', AIVERSE_THEME_CSS_DIR . 'theme-custom.css', []);
 //     if ($scrollup_switch) {
 //         $custom_css = '';
 //         $custom_css .= "#scrollUp{ display: none !important;}";
@@ -511,7 +511,7 @@ add_action('wp_enqueue_scripts', 'aiverse_breadcrumb_bottom_spacing');
 // // theme color
 // function aiverse_custom_color_scrollup(){
 //     $color_code = get_theme_mod('aiverse_color_scrollup', '#2b4eff');
-//     wp_enqueue_style('aiverse-custom', AIVERSE_THEME_CSS_DIR . 'aiverse-custom.css', []);
+//     wp_enqueue_style('aiverse-custom', AIVERSE_THEME_CSS_DIR . 'theme-custom.css', []);
 //     if ($color_code != '') {
 //         $custom_css = '';
 //         $custom_css .= ".demo-class { color: " . $color_code . "}";
@@ -524,7 +524,7 @@ add_action('wp_enqueue_scripts', 'aiverse_breadcrumb_bottom_spacing');
 // // theme color
 // function aiverse_custom_color_secondary(){
 //     $color_code = get_theme_mod('aiverse_color_option_3', '#30a820');
-//     wp_enqueue_style('aiverse-custom', AIVERSE_THEME_CSS_DIR . 'aiverse-custom.css', []);
+//     wp_enqueue_style('aiverse-custom', AIVERSE_THEME_CSS_DIR . 'theme-custom.css', []);
 //     if ($color_code != '') {
 //         $custom_css = '';
 //         $custom_css .= ".demo-class { background-color: " . $color_code . "}";
@@ -540,7 +540,7 @@ add_action('wp_enqueue_scripts', 'aiverse_breadcrumb_bottom_spacing');
 // // theme color
 // function aiverse_custom_color_secondary_2(){
 //     $color_code = get_theme_mod('aiverse_color_option_3_2', '#ffb352');
-//     wp_enqueue_style('aiverse-custom', AIVERSE_THEME_CSS_DIR . 'aiverse-custom.css', []);
+//     wp_enqueue_style('aiverse-custom', AIVERSE_THEME_CSS_DIR . 'theme-custom.css', []);
 //     if ($color_code != '') {
 //         $custom_css = '';
 //         $custom_css .= ".demo-class { background-color: " . $color_code . "}";

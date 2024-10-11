@@ -36,8 +36,7 @@ $blog_column = is_active_sidebar( 'blog-sidebar' ) ? 8 : 12;
           endif;
 
 						/* Start the Loop */
-						while ( have_posts() ): the_post(); 
-            // var_dump( the_post() );
+						while ( have_posts() ): the_post();
             ?>
 						<?php
 							/*

@@ -7,12 +7,11 @@
  * @package aiverse
  */
 
- if ( is_single() ) : ?>
- <!-- single/detail post -->
-    <article id="post-<?php the_ID();?>" <?php post_class( 'postbox__item format-image mb-50' );?>>
+if ( is_single() ) : ?>
+    <article id="post-<?php the_ID();?>" <?php post_class( 'postbox__item format-search mb-50' );?>>
         <?php if ( has_post_thumbnail() ): ?>
             <div class="postbox__thumb">
-                <?php the_post_thumbnail( 'blog-details', ['class' => 'img-responsive w-100'] );?>
+                <?php the_post_thumbnail( 'full', ['class' => 'img-responsive'] );?>
             </div>
         <?php endif;?>
 
@@ -36,41 +35,30 @@
             <?php print aiverse_get_tag();?>
         </div>
     </article>
-<?php else:
-    // blog list post
-    ?>
+<?php else: ?>
 
-     <article id="post-<?php the_ID();?>" <?php post_class( 'postbox__item blog__page__content__2 wow fadeInDown' );?>>
-
-        <?php if ( has_post_thumbnail() ): ?>
-        <div class="blog__content__img">
-          <div class="blog__img">
+    <article id="post-<?php the_ID();?>" <?php post_class( 'postbox__item format-search mb-50' );?>>
+        <?php if ( has_post_thumbnail() ): ?>    
+        <div class="postbox__thumb">
             <a href="<?php the_permalink();?>">
-                <?php the_post_thumbnail( 'blog-post', ['class' => 'img-responsive w-100'] );?>
+                <?php the_post_thumbnail( 'full', ['class' => 'img-responsive'] );?>
             </a>
-          </div>
         </div>
-        <?php endif;?>
+        <?php endif; ?>
+        <div class="postbox__content">
+            <!-- blog meta -->
+            <?php get_template_part( 'template-parts/blog/blog-meta' ); ?>
 
-        <div class="blog__content__text postbox__content">
-        <!-- blog meta -->
-        <?php get_template_part( 'template-parts/blog/blog-meta' ); ?>
-
-          <a href=<?php the_permalink();?>>
-            <h4 class="postbox__title fs__40 mt__32 mb__10 fw-bold secondary__2">
-              <?php the_title();?>
-            </h4>
-          </a>
+            <h3 class="postbox__title">
+                <a href="<?php the_permalink();?>"><?php the_title();?></a>
+            </h3>
             <div class="postbox__text">
                 <?php the_excerpt();?>
             </div>
-          <div class="mt__32">
 
             <!-- blog btn -->
             <?php get_template_part( 'template-parts/blog/blog-btn' ); ?>
-            </a>
-          </div>
         </div>
-      </article>
-
+    </article>
+    
 <?php endif;?>

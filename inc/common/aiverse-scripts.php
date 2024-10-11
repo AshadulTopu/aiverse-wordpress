@@ -14,7 +14,10 @@ function aiverse_scripts() {
     wp_enqueue_style('magnific-popup', AIVERSE_THEME_CSS_DIR . 'magnific-popup.min.css', []);
     wp_enqueue_style('odometer', AIVERSE_THEME_CSS_DIR . 'odometer.css', []);
     wp_enqueue_style('swiper-bundle', AIVERSE_THEME_CSS_DIR . 'swiper-bundle.min.css', []);
+    wp_enqueue_style('spacing', AIVERSE_THEME_CSS_DIR . 'spacing.css', [], time());
     wp_enqueue_style('style-css', AIVERSE_THEME_CSS_DIR . 'style.css', [], time());
+    wp_enqueue_style('theme-unit', AIVERSE_THEME_CSS_DIR . 'theme-unit.css', [], time());
+    wp_enqueue_style('theme-custom', AIVERSE_THEME_CSS_DIR . 'theme-custom.css', [], time());
     wp_enqueue_style('aiverse-style', get_stylesheet_uri(), [], time());
 
     /* all js files */

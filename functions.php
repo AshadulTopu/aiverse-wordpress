@@ -188,7 +188,7 @@ require_once AIVERSE_THEME_INC . 'class-navwalker.php';
 // require_once AIVERSE_THEME_INC . 'add_plugin.php';
 require_once AIVERSE_THEME_INC . '/common/aiverse-breadcrumb.php';
 require_once AIVERSE_THEME_INC . '/common/aiverse-scripts.php';
-// require_once AIVERSE_THEME_INC . '/common/aivers-widgets.php';
+require_once AIVERSE_THEME_INC . '/common/aivers-widgets.php';
 
 
 

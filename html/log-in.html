@@ -1,0 +1,363 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Login | Alverse</title>
+  <link rel="shortcut icon" href="./assets/images/favicon.png" type="image/x-icon">
+  <!-- custom css  -->
+  <link rel="stylesheet" href="./assets/css/style.css">
+</head>
+
+<body>
+  <!-- main Body  -->
+
+  <!-- back to top  -->
+  <button class="back-to-top" id="back-to-top"></button>
+
+    <!-- pre loader  -->
+    <div id="preloader">
+      <div id="loader-img">
+          <div id="loader"></div>
+      </div>
+  </div>
+  
+  <!-- Header start  -->
+  <header class="bg__secondary__1 header_section border__bottom__black">
+    <div class="container">
+      <nav>
+        <div class="navbar">
+          <i class="fa-solid fa-bars" id="shownav"></i>
+          <div class="logo border__right__black_2">
+            <a class="me-xl-5 me-lg-2" href="index.html">
+              <img src="assets/images/logo.png" alt="logo">
+            </a>
+          </div>
+          <div class="nav-links">
+            <div class="sidebar-logo">
+              <a href="index.html">
+                <img src="assets/images/logo.png" alt="logo">
+              </a>
+              <i class="fa-solid fa-xmark" id="closenav"></i>
+            </div>
+            <ul class="links">
+              <li>
+                <span class="dropdown_menu">HOME
+                  <i class="fa-solid fa-chevron-down up-arrow arrow"></i>
+                </span>
+                <ul class="sub-menu dropdown_item">
+                  <li><a href="index.html">Home 1</a></li>
+                  <li><a href="index-2.html">Home 2</a></li>
+                  <li><a href="index-3.html">Home 3</a></li>
+                </ul>
+              </li>
+              <li>
+                <span class="dropdown_menu">About
+                  <i class="fa-solid fa-chevron-down up-arrow arrow"></i>
+                </span>
+                <ul class="sub-menu dropdown_item">
+                  <li><a href="aboutus-1.html">About 1</a></li>
+                  <li><a href="aboutus-2.html">About 2</a></li>
+                </ul>
+              </li>
+              <li>
+                <span class="dropdown_menu">
+                  Blog
+                  <i class="fa-solid fa-chevron-down up-arrow arrow"></i>
+                </span>
+                <ul class="sub-menu dropdown_item">
+                  <li><a href="blog-1.html">blog 1</a></li>
+                  <li><a href="blog-2.html">Blog 2</a></li>
+                  <li><a href="blog-details.html">blog details</a></li>
+                </ul>
+              </li>
+              <li><a href="pricing.html">Pricing</a>
+              </li>
+              <li>
+                <span class="dropdown_menu">shop
+                  <i class="fa-solid fa-chevron-down up-arrow arrow"></i>
+                </span>
+                <ul class="sub-menu dropdown_item">
+                  <li><a href="shoppage.html">Shopping</a></li>
+                  <li><a href="Product-single.html">product single page</a></li>
+                  <li><a href="shoping-cart.html">shopping cart</a></li>
+                  <li><a href="checkout-page.html">checkout page</a></li>
+                </ul>
+              </li>
+              <li>
+                <span class="dropdown_menu">Pages
+                  <i class="fa-solid fa-chevron-down up-arrow arrow"></i>
+                </span>
+                <ul class="sub-menu dropdown_item">
+                  <li><a href="services-page.html">services page</a></li>
+                  <li><a href="services-details.html">services details</a></li>
+                  <li><a href="faq.html">Faq’s</a></li>
+                  <li><a href="team.html">team</a></li>
+                  <li><a href="register.html">register</a></li>
+                  <li><a href="log-in.html">login</a></li>
+                  <li><a href="thank-you.html">Thank you</a></li>
+                  <li><a href="error.html">error</a></li>
+                </ul>
+              </li>
+              <li><a href="contact.html">contact</a></li>
+            </ul>
+          </div>
+          <div class="header_btn">
+            <a class="bg__primary__1 fs__16 rounded-pill py-2 px-xl-4 px-3 text-white btn__hover d-block"
+              href="log-in.html">Get
+              start</a>
+          </div>
+        </div>
+      </nav>
+    </div>
+  </header>
+  <!-- Header end  -->
+
+  <!-- Hero start  -->
+  <section class="hero bg__secondary__1 py__80 mb__n1 wow fadeInDown">
+    <div class="container position-relative">
+      <div class="position-relative">
+        <div class="ball_img_3 d-none d-lg-block rotate">
+          <img src="assets/images/ball.png" alt="ball">
+        </div>
+
+        <div class="robot__img d-none d-lg-block">
+          <div class="robot__circle rotat">
+            <img src="assets/images/robot_circle.png" alt="robot__circle">
+          </div>
+          <div class="robot__body jumping_2">
+            <img src="assets/images/robot_body.png" alt="robot__body">
+          </div>
+          <div class="robot__base jumping_1">
+            <img src="assets/images/robot_base.png" alt="robot__base">
+          </div>
+        </div>
+      </div>
+      <h2 class="fs__64 text-white fw-bolder text-center text-capitalize wow fadeInDown">
+        Login page
+      </h2>
+      <nav aria-label="breadcrumb">
+        <ol class="breadcrumb justify-content-center">
+          <li class="breadcrumb-item">
+            <a href="index.html" class="text-white fs_20 text-capitalize">Home</a>
+          </li>
+          <li class="breadcrumb-item text-white fs__20 text-capitalize text-decoration-underline" aria-current="page">
+            login page
+          </li>
+        </ol>
+      </nav>
+    </div>
+  </section>
+  <!-- Hero end  -->
+
+  <!-- login start -->
+  <section class="login__section py__120 wow fadeInUp">
+    <div class="container">
+      <div class="row justify-content-center">
+        <div class="col-lg-8 col-md-10 align-self-center">
+          <div class="p__60 shadow-2 rounded-3">
+            <form action="#">
+              <div>
+                <label for="email" class="heading__font fs__20 secondary__2 mb-2 text-capitalize fw-bold">email
+                  address*</label>
+                <input type="email" class="form-control p-3 bg__secondary__3 border-0 br__10" id="email"
+                  placeholder="Email" required>
+              </div>
+              <div class="my-3">
+                <label for="password"
+                  class="heading__font fs__20 secondary__2 mb-2 text-capitalize fw-bold">Password*</label>
+                <input type="password" class="form-control p-3 bg__secondary__3 border-0 br__10" id="password"
+                  placeholder="Password" required>
+              </div>
+              <div class="my-3 d-flex align-items-center justify-content-between">
+                <div class="d-flex align-items-center gap-3">
+                  <input type="checkbox" name="remember-me" class="form-check-input mt-0" id="remember-me">
+                  <label for="remember-me" class="fs__16 secondary__2 text-capitalize fw-bold">remember me</label>
+                </div>
+                <a href="javascript:void(0)"
+                  class="fs__16 primary__1 text-capitalize fw-bold btn__hover__text__primary">Forgot Password?</a>
+              </div>
+              <button class="d-block w-100 fs__20 text-center fw-bold btn bg__primary__1 text-capitalize py-3">log in
+              </button>
+            </form>
+
+            <p class="sign__in__divider py-3 text-center m-0">or</p>
+
+            <a href="register.html"
+              class="d-block w-100 fs__20 text-center fw-bold bg__secondary__3 primary__1 py-3 text-capitalize br__10 btn__hover__text__primary">
+              create an account
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- login end -->
+
+  <!-- call to action start  -->
+  <section class="call__to__action position-relative wow fadeInDown">
+    <div class="container">
+      <div class="bg__blue__1 py__100 br__20">
+        <h2 class="fs__48 fw-bolder text-white text-center text-capitalize">
+          Get Started with Frase Today
+        </h2>
+        <p class="fs__20 text-white text-center">
+          Take your content strategy to new heights with Frase.
+        </p>
+        <div class="text-center">
+          <a class="btn bg__primary__1 py-sm-3 py-2 px-sm-5 px-4 rounded-pill fs__16 my__10 text-capitalize btn__hover"
+            href="log-in.html">get start</a>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- call to action end  -->
+
+  <!-- footer start -->
+  <footer class="bg__secondary__1 pt__300 mt__n200">
+    <div class="container">
+      <div class="circle_img">
+        <img src="assets/images/circle.png" alt="circle">
+      </div>
+      <div class="star_img d-none d-sm-block">
+        <img src="assets/images/star.png" alt="star">
+      </div>
+      <div class="position-relative wow fadeInUp">
+        <div class="pb__100 border__bottom__black">
+          <div class="row gy-sm-5 gy-4">
+
+            <div class="col-lg-3 col-sm-6">
+              <h4 class="fs__32 fw-semibold text-white mb__32">Company</h4>
+              <ul class="list-unstyled d-grid gap-sm-3 gap-2 mb-0">
+                <li>
+                  <a class="fs__16 text-white" href="aboutus-1.html">About Us</a>
+                </li>
+                <li>
+                  <a class="fs__16 text-white" href="pricing.html">Pricing</a>
+                </li>
+                <li>
+                  <a class="fs__16 text-white" href="contact.html">Contact Us</a>
+                </li>
+                <li>
+                  <a class="fs__16 text-white" href="services-page.html">Services</a>
+                </li>
+              </ul>
+            </div>
+
+            <div class="col-lg-3 col-sm-6">
+              <h4 class="fs__32 fw-semibold text-white mb__32">
+                Useful Links
+              </h4>
+              <ul class="list-unstyled d-grid gap-sm-3 gap-2 mb-0">
+                <li>
+                  <a class="fs__16 text-white" href="javascript:void(0)">Projects</a>
+                </li>
+                <li>
+                  <a class="fs__16 text-white" href="log-in.html">Log in</a>
+                </li>
+                <li>
+                  <a class="fs__16 text-white" href="faq.html">Faq’s</a>
+                </li>
+                <li>
+                  <a class="fs__16 text-white" href="shoppage.html">Shop</a>
+                </li>
+              </ul>
+            </div>
+
+            <div class="col-xl-3 col-lg-2 col-sm-6">
+              <h4 class="fs__32 fw-semibold text-white mb__32">Services</h4>
+              <ul class="list-unstyled d-grid gap-sm-3 gap-2 mb-0">
+                <li>
+                  <a class="fs__16 text-white" href="pricing.html">Pricing Plan</a>
+                </li>
+                <li>
+                  <a class="fs__16 text-white" href="javascript:void(0)">AI Writer</a>
+                </li>
+                <li>
+                  <a class="fs__16 text-white" href="javascript:void(0)">Language Packs</a>
+                </li>
+                <li>
+                  <a class="fs__16 text-white" href="javascript:void(0)">Privacy Policy</a>
+                </li>
+              </ul>
+            </div>
+
+            <div class="col-xl-3 col-lg-4 col-sm-6">
+              <h4 class="fs__32 fw-semibold text-white mb__32">Contact Us</h4>
+              <ul class="list-unstyled d-grid gap-sm-3 gap-2 mb-0">
+                <li>
+                  <a class="fs__16 text-white d-flex align-items-start" href="https://goo.gl/maps/r56FNbntXo4breaMA">
+                    <i class="fa-solid fa-location-dot me-2 mt-2"></i> <span>17171 Broadway New York States of
+                      America</span> </a>
+                </li>
+                <li>
+                  <a class="fs__16 text-white" href="tel:555-777-965-44444">
+                    <i class="fa-solid fa-phone-volume me-2"></i>555-777-965-44444 </a>
+                </li>
+                <li>
+                  <a class="fs__16 text-white " href="mailto:Supportrony@Gmail.com">
+                    <i class="fa-solid fa-envelope me-2"></i>Supportrony@Gmail.com</a>
+                </li>
+              </ul>
+            </div>
+
+          </div>
+        </div>
+        <div class="d-flex align-items-center justify-content-md-between justify-content-center">
+          <div class="d-flex align-items-center py__20">
+            <div class="border__right__black d-none d-md-block">
+              <a class="mr__30" href="index.html">
+                <img src="assets/images/logo.png" width="150" height="40" alt="logo">
+              </a>
+            </div>
+            <span class="fs__14 text-white ms-sm-4 text-center">
+              Copyright @2023
+              <a class="primary__2 fs__14" href="index.html">Alverse</a> Designed BY
+              <a class="primary__2 fs__14" href="https://www.templatemonster.com/authors/softivus/">softivus</a>
+            </span>
+          </div>
+          <div class="d-none d-md-block">
+            <ul class="d-flex align-items-center gap-3 list-unstyled">
+              <li>
+                <a class="fs__16 text-white" href="javascript:void(0)"><i class="fa-brands fa-facebook-f"></i></a>
+              </li>
+              <li>
+                <a class="fs__16 text-white" href="javascript:void(0)"><i class="fa-brands fa-twitter"></i></a>
+              </li>
+              <li>
+                <a class="fs__16 text-white" href="javascript:void(0)"><i class="fa-brands fa-instagram"></i></a>
+              </li>
+              <li>
+                <a class="fs__16 text-white" href="javascript:void(0)"><i class="fa-brands fa-linkedin-in"></i></a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </footer>
+  <!-- footer end -->
+
+  <!-- js script start -->
+  <!-- jquery -->
+  <script src="assets/js/pluging/code.jquery.com_jquery-3.7.0.min.js"></script>
+  <!-- bootstrap  -->
+  <script src="assets/js/pluging/bootstrap.min.js"></script>
+  <!-- swiper slider cdn  -->
+  <script src="assets/js/pluging/swiper-bundle.min.js"></script>
+  <!-- wow js  -->
+  <script src="assets/js/pluging/wow.min.js"></script>
+  <!-- viewport -->
+  <script src="assets/js/pluging/viewport.js"></script>
+  <!-- Odometer js -->
+  <script src="assets/js/pluging/odometer.js_0.4.7_odometer.min.js"></script>
+
+  <!-- plugin customization js  -->
+  <script src="assets/js/plugingCustomize.js"></script>
+  <!-- custom js  -->
+  <script src="assets/js/main.js"></script>
+</body>
+
+</html>

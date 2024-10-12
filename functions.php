@@ -176,44 +176,35 @@ require AIVERSE_THEME_INC . 'template-helper.php';
 include_once AIVERSE_THEME_INC . 'kirki-customizer.php';
 include_once AIVERSE_THEME_INC . 'class-aiverse-kirki.php';
 
-
-
-
-
 /**
  * include aiverse functions file
  */
 require_once AIVERSE_THEME_INC . 'class-navwalker.php';
-// require_once AIVERSE_THEME_INC . 'class-tgm-plugin-activation.php';
-// require_once AIVERSE_THEME_INC . 'add_plugin.php';
+require_once AIVERSE_THEME_INC . 'class-tgm-plugin-activation.php';
+require_once AIVERSE_THEME_INC . 'add_plugin.php';
 require_once AIVERSE_THEME_INC . '/common/aiverse-breadcrumb.php';
 require_once AIVERSE_THEME_INC . '/common/aiverse-scripts.php';
-require_once AIVERSE_THEME_INC . '/common/aivers-widgets.php';
-
-
-
-
+require_once AIVERSE_THEME_INC . '/common/aiverse-widgets.php';
 
 
 /**
  * Add a pingback url auto-discovery header for single posts, pages, or attachments.
  */
-function aiverse_pingback_header() {
-    if ( is_singular() && pings_open() ) {
-        printf( '<link rel="pingback" href="%s">', esc_url( get_bloginfo( 'pingback_url' ) ) );
-    }
-}
-add_action( 'wp_head', 'aiverse_pingback_header' );
+// function aiverse_pingback_header() {
+//     if ( is_singular() && pings_open() ) {
+//         printf( '<link rel="pingback" href="%s">', esc_url( get_bloginfo( 'pingback_url' ) ) );
+//     }
+// }
+// add_action( 'wp_head', 'aiverse_pingback_header' );
 
-// change textarea position in comment form
-// ----------------------------------------------------------------------------------------
-function aiverse_move_comment_textarea_to_bottom( $fields ) {
-    $comment_field       = $fields[ 'comment' ];
-    unset( $fields[ 'comment' ] );
-    $fields[ 'comment' ] = $comment_field;
-    return $fields;
-}
-add_filter( 'comment_form_fields', 'aiverse_move_comment_textarea_to_bottom' );
+// // change textarea position in comment form
+// function aiverse_move_comment_textarea_to_bottom( $fields ) {
+//     $comment_field       = $fields[ 'comment' ];
+//     unset( $fields[ 'comment' ] );
+//     $fields[ 'comment' ] = $comment_field;
+//     return $fields;
+// }
+// add_filter( 'comment_form_fields', 'aiverse_move_comment_textarea_to_bottom' );
 
 
 // aiverse_comment 
@@ -239,7 +230,6 @@ if ( !function_exists( 'aiverse_comment' ) ) {
                         <div class="comments-replay">
                             <?php comment_reply_link( array_merge( $args, [ 'depth' => $depth, 'max_depth' => $args['max_depth'] ] ) );?>
                         </div>
-
                     </div>
                 </div>
         <?php
@@ -250,7 +240,7 @@ if ( !function_exists( 'aiverse_comment' ) ) {
 /**
  * shortcode supports for removing extra p, space etc.
  */
-add_filter( 'the_content', 'aiverse_shortcode_extra_content_remove' );
+// add_filter( 'the_content', 'aiverse_shortcode_extra_content_remove' );
 /**
  * Filters the content to remove any extra paragraph or break tags
  * caused by shortcodes.
@@ -260,41 +250,37 @@ add_filter( 'the_content', 'aiverse_shortcode_extra_content_remove' );
  * @param string $content  String of HTML content.
  * @return string $content Amended string of HTML content.
  */
-function aiverse_shortcode_extra_content_remove( $content ) {
+// function aiverse_shortcode_extra_content_remove( $content ) {
+//     $array = [
+//         '<p>['    => '[',
+//         ']</p>'   => ']',
+//         ']<br />' => ']',
+//     ];
+//     return strtr( $content, $array );
+// }
 
-    $array = [
-        '<p>['    => '[',
-        ']</p>'   => ']',
-        ']<br />' => ']',
-    ];
-    return strtr( $content, $array );
+// // aiverse_search_filter_form
+// if ( !function_exists( 'aiverse_search_filter_form' ) ) {
+//     function aiverse_search_filter_form( $form ) {
+//         $form = sprintf(
+//             '<div class="sidebar__widget-px"><div class="search-px"><form class="sidebar__search p-relative" action="%s" method="get">
+//       	<input type="text" value="%s" required name="s" placeholder="%s">
+//       	<button type="submit"> <i class="fa fa-search"></i>  </button>
+// 		</form></div></div>',
+//             esc_url( home_url( '/' ) ),
+//             esc_attr( get_search_query() ),
+//             esc_html__( 'Search', 'aiverse' )
+//         );
+//         return $form;
+//     }
+//     add_filter( 'get_search_form', 'aiverse_search_filter_form' );
+// }
 
-}
+// add_action( 'admin_enqueue_scripts', 'aiverse_admin_custom_scripts' );
 
-// aiverse_search_filter_form
-if ( !function_exists( 'aiverse_search_filter_form' ) ) {
-    function aiverse_search_filter_form( $form ) {
-
-        $form = sprintf(
-            '<div class="sidebar__widget-px"><div class="search-px"><form class="sidebar__search p-relative" action="%s" method="get">
-      	<input type="text" value="%s" required name="s" placeholder="%s">
-      	<button type="submit"> <i class="fa fa-search"></i>  </button>
-		</form></div></div>',
-            esc_url( home_url( '/' ) ),
-            esc_attr( get_search_query() ),
-            esc_html__( 'Search', 'aiverse' )
-        );
-
-        return $form;
-    }
-    add_filter( 'get_search_form', 'aiverse_search_filter_form' );
-}
-
-add_action( 'admin_enqueue_scripts', 'aiverse_admin_custom_scripts' );
-
-function aiverse_admin_custom_scripts() {
-    wp_enqueue_media();
-    wp_enqueue_style( 'customizer-style', get_template_directory_uri() . '/inc/css/customizer-style.css',array());
-    wp_register_script( 'aiverse-admin-custom', get_template_directory_uri() . '/inc/js/admin_custom.js', [ 'jquery' ], '', true );
-    wp_enqueue_script( 'aiverse-admin-custom' );
-}
+// function aiverse_admin_custom_scripts() {
+//     wp_enqueue_media();
+//     wp_enqueue_style( 'customizer-style', get_template_directory_uri() . '/inc/css/customizer-style.css',array());
+//     wp_register_script( 'aiverse-admin-custom', get_template_directory_uri() . '/inc/js/admin_custom.js', [ 'jquery' ], '', true );
+//     wp_enqueue_script( 'aiverse-admin-custom' );
+// }

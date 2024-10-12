@@ -15,10 +15,11 @@
  *
  * aiverse header
  */
- function aiverse_check_header()
-{
+ function aiverse_check_header(){
     $aiverse_header_style = function_exists('get_field') ? get_field('header_style') : NULL;
     $aiverse_default_header_style = get_theme_mod('choose_default_header', 'header-style-1');
+
+    var_dump($aiverse_header_style);
 
     if ($aiverse_header_style == 'header-style-1' && empty($_GET['s'])) {
         get_template_part('template-parts/header/header-1');
@@ -29,8 +30,6 @@
         /** default header style **/
         if ($aiverse_default_header_style == 'header-style-2') {
             get_template_part('template-parts/header/header-2');
-        } elseif ($aiverse_default_header_style == 'header-style-3') {
-            get_template_part('template-parts/header/header-3');
         } else {
             get_template_part('template-parts/header/header-1');
         }
@@ -47,13 +46,11 @@ function aiverse_header_lang_defualt()
 {
     $aiverse_header_lang = get_theme_mod('aiverse_header_lang', false);
     if ($aiverse_header_lang) : ?>
-
         <ul>
             <li><a href="javascript:void(0)" class="lang__btn"><?php print esc_html__('English', 'aiverse'); ?> <i class="fa-light fa-angle-down"></i></a>
                 <?php do_action('aiverse_language'); ?>
             </li>
         </ul>
-
     <?php endif; ?>
 <?php
 }
@@ -62,40 +59,38 @@ function aiverse_header_lang_defualt()
  * [aiverse_language_list description]
  * @return [type] [description]
  */
-function _aiverse_language($mar)
-{
-    return $mar;
-}
-function aiverse_language_list()
-{
+// function _aiverse_language($mar){
+//     return $mar;
+// }
+// function aiverse_language_list(){
 
-    $mar = '';
-    $languages = apply_filters('wpml_active_languages', NULL, 'orderby=id&order=desc');
-    if (!empty($languages)) {
-        $mar = '<ul>';
-        foreach ($languages as $lan) {
-            $active = $lan['active'] == 1 ? 'active' : '';
-            $mar .= '<li class="' . $active . '"><a href="' . $lan['url'] . '">' . $lan['translated_name'] . '</a></li>';
-        }
-        $mar .= '</ul>';
-    } else {
-        //remove this code when send themeforest reviewer team
-        $mar .= '<ul>';
-        $mar .= '<li><a href="#">' . esc_html__('English', 'aiverse') . '</a></li>';
-        $mar .= '<li><a href="#">' . esc_html__('Bangla', 'aiverse') . '</a></li>';
-        $mar .= '<li><a href="#">' . esc_html__('French', 'aiverse') . '</a></li>';
-        $mar .= ' </ul>';
-    }
-    print _aiverse_language($mar);
-}
-add_action('aiverse_language', 'aiverse_language_list');
+//     $mar = '';
+//     $languages = apply_filters('wpml_active_languages', NULL, 'orderby=id&order=desc');
+//     if (!empty($languages)) {
+//         $mar = '<ul>';
+//         foreach ($languages as $lan) {
+//             $active = $lan['active'] == 1 ? 'active' : '';
+//             $mar .= '<li class="' . $active . '"><a href="' . $lan['url'] . '">' . $lan['translated_name'] . '</a></li>';
+//         }
+//         $mar .= '</ul>';
+//     } else {
+//         //remove this code when send themeforest reviewer team
+//         $mar .= '<ul>';
+//         $mar .= '<li><a href="#">' . esc_html__('English', 'aiverse') . '</a></li>';
+//         $mar .= '<li><a href="#">' . esc_html__('Bangla', 'aiverse') . '</a></li>';
+//         $mar .= '<li><a href="#">' . esc_html__('French', 'aiverse') . '</a></li>';
+//         $mar .= ' </ul>';
+//     }
+//     print _aiverse_language($mar);
+// }
+// add_action('aiverse_language', 'aiverse_language_list');
 
 
 
 
 // header logo
-function aiverse_header_logo()
-{ ?>
+function aiverse_header_logo(){ 
+    ?>
     <?php
         $aiverse_logo_on = function_exists('get_field') ? get_field('is_enable_sec_logo') : NULL;
         $aiverse_logo = get_template_directory_uri() . '/assets/images/logo/logo.png';
@@ -147,17 +142,17 @@ function aiverse_mobile_logo() {
 
 
 // header top social
-// function aiverse_header_social(){
-//     $aiverse_topbar_social_on = get_theme_mod('aiverse_topbar_social_on', false);
-//     $aiverse_topbar_fb_url = get_theme_mod('aiverse_topbar_fb_url', __('#', 'aiverse'));
-//     $aiverse_topbar_twitter_url = get_theme_mod('aiverse_topbar_twitter_url', __('#', 'aiverse'));
-//     $aiverse_topbar_instagram_url = get_theme_mod('aiverse_topbar_instagram_url', __('#', 'aiverse'));
-//     $aiverse_topbar_linkedin_url = get_theme_mod('aiverse_topbar_linkedin_url', __('#', 'aiverse'));
-//     $aiverse_topbar_youtube_url = get_theme_mod('aiverse_topbar_youtube_url', __('#', 'aiverse'));
+function aiverse_header_social(){
+    $aiverse_topbar_social_on = get_theme_mod('aiverse_topbar_social_on', false);
+    $aiverse_topbar_fb_url = get_theme_mod('aiverse_topbar_fb_url', __('#', 'aiverse'));
+    $aiverse_topbar_twitter_url = get_theme_mod('aiverse_topbar_twitter_url', __('#', 'aiverse'));
+    $aiverse_topbar_instagram_url = get_theme_mod('aiverse_topbar_instagram_url', __('#', 'aiverse'));
+    $aiverse_topbar_linkedin_url = get_theme_mod('aiverse_topbar_linkedin_url', __('#', 'aiverse'));
+    $aiverse_topbar_youtube_url = get_theme_mod('aiverse_topbar_youtube_url', __('#', 'aiverse'));
 
-//     if($aiverse_topbar_social_on){
+    if($aiverse_topbar_social_on){
         ?>
-        <!-- <ul class="header__social__list">
+        <ul class="header__social__list">
             <?php if(!empty($aiverse_topbar_fb_url)): ?>
             <li><a href="<?php print esc_url($aiverse_topbar_fb_url); ?>" target="_blank"><i class="fa-brands fa-facebook-f"></i></a></li>
             <?php endif; ?>
@@ -173,10 +168,10 @@ function aiverse_mobile_logo() {
             <?php if(!empty($aiverse_topbar_youtube_url)): ?>
             <li><a href="<?php print esc_url($aiverse_topbar_youtube_url); ?>" target="_blank"><i class="fa-brands fa-youtube"></i></a></li>
             <?php endif; ?>
-        </ul> -->
+        </ul>
     <?php
-//     }
-// }
+    }
+}
 
 
 

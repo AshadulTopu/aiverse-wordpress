@@ -1,4 +1,6 @@
 
 1. can not upload any file
-2. can not create,update post,page
+2. can not create,update post,page (solve)
 2. pagination not showing
+3. Conditional header not work
+

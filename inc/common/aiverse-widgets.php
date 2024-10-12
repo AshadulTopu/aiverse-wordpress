@@ -7,9 +7,9 @@
  */
 function aiverse_widgets_init() {
 
-    $footer_style_2_switch = get_theme_mod( 'footer_style_2_switch', false );
-    $footer_style_3_switch = get_theme_mod( 'footer_style_3_switch', false );
-    $footer_style_4_switch = get_theme_mod( 'footer_style_4_switch', false );
+    // $footer_style_2_switch = get_theme_mod( 'footer_style_2_switch', false );
+    // $footer_style_3_switch = get_theme_mod( 'footer_style_3_switch', false );
+    // $footer_style_4_switch = get_theme_mod( 'footer_style_4_switch', false );
 
     /**
      * blog sidebar

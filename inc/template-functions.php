@@ -6,8 +6,6 @@
  */
 
 
-
-
  /**
  * Adds custom classes to the array of body classes.
  *
@@ -57,7 +55,6 @@ function aiverse_get_tag() {
  * Get categories.
  */
 function aiverse_get_category() {
-
     $categories = get_the_category( get_the_ID() );
     $x = 0;
     foreach ( $categories as $category ) {
@@ -67,7 +64,6 @@ function aiverse_get_category() {
         }
         $x++;
         print '<a class="news-tag" href="' . get_category_link( $category->term_id ) . '">' . $category->cat_name . '</a>';
-
     }
 }
 
@@ -87,6 +83,42 @@ function aiverse_img_alt_text( $img_er_id = null ) {
     } else {
         $alt_text = esc_html__( 'Image Alt Text', 'aiverse' );
     }
-
     return $alt_text;
 }
+
+
+// aiverse_offer_sidebar_func
+// function aiverse_offer_sidebar_func() {
+//     if ( is_active_sidebar( 'offer-sidebar' ) ) {
+
+//         dynamic_sidebar( 'offer-sidebar' );
+//     }
+// }
+// add_action( 'aiverse_offer_sidebar', 'aiverse_offer_sidebar_func', 20 );
+
+// aiverse_service_sidebar
+// function aiverse_service_sidebar_func() {
+//     if ( is_active_sidebar( 'services-sidebar' ) ) {
+
+//         dynamic_sidebar( 'services-sidebar' );
+//     }
+// }
+// add_action( 'aiverse_service_sidebar', 'aiverse_service_sidebar_func', 20 );
+
+// aiverse_portfolio_sidebar
+// function aiverse_portfolio_sidebar_func() {
+//     if ( is_active_sidebar( 'portfolio-sidebar' ) ) {
+
+//         dynamic_sidebar( 'portfolio-sidebar' );
+//     }
+// }
+// add_action( 'aiverse_portfolio_sidebar', 'aiverse_portfolio_sidebar_func', 20 );
+
+// aiverse_faq_sidebar
+// function aiverse_faq_sidebar_func() {
+//     if ( is_active_sidebar( 'faq-sidebar' ) ) {
+
+//         dynamic_sidebar( 'faq-sidebar' );
+//     }
+// }
+// add_action( 'aiverse_faq_sidebar', 'aiverse_faq_sidebar_func', 20 );

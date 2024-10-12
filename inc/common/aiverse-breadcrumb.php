@@ -30,9 +30,11 @@ function aiverse_breadcrumb_func(){
         $title = esc_html__('Search Results for : ', 'aiverse') . get_search_query();
     } elseif (is_404()) {
         $title = esc_html__('Page not Found', 'aiverse');
-    } elseif (function_exists('is_woocommerce') && is_woocommerce()) {
-        $title = get_theme_mod('breadcrumb_shop', __('Shop', 'aiverse'));
-    } elseif (is_archive()) {
+    } 
+    // elseif (function_exists('is_woocommerce') && is_woocommerce()) {
+    //     $title = get_theme_mod('breadcrumb_shop', __('Shop', 'aiverse'));
+    // } 
+    elseif (is_archive()) {
         $title = get_the_archive_title();
     } else {
         $title = get_the_title();
@@ -74,27 +76,27 @@ function aiverse_breadcrumb_func(){
                 <div class="container position-relative">
                 <div class="position-relative">
                     <div class="ball_img_3 d-none d-lg-block rotate">
-                    <img src="<?php echo get_template_directory_uri(); ?> /assets/images/ball.png" alt="ball">
+                    <img src="<?php echo get_template_directory_uri(); ?> /assets/images/ball.png" alt="<?php echo esc_attr__('ball', 'aiverse'); ?>">
                     </div>
 
                     <div class="robot__img d-none d-lg-block">
                     <div class="robot__circle rotat">
-                        <img src="<?php echo get_template_directory_uri(); ?> /assets/images/robot_circle.png" alt="robot_circle">
+                        <img src="<?php echo get_template_directory_uri(); ?> /assets/images/robot_circle.png" alt="<?php echo esc_attr__('robot_circle', 'aiverse'); ?>">
                     </div>
                     <div class="robot__body jumping_2">
-                        <img src="<?php echo get_template_directory_uri(); ?> /assets/images/robot_body.png" alt="robot_body">
+                        <img src="<?php echo get_template_directory_uri(); ?> /assets/images/robot_body.png" alt="<?php echo esc_attr__('robot_body', 'aiverse'); ?>">
                     </div>
                     <div class="robot__base jumping_1">
-                        <img src="<?php echo get_template_directory_uri(); ?> /assets/images/robot_base.png" alt="robot_base">
+                        <img src="<?php echo get_template_directory_uri(); ?> /assets/images/robot_base.png" alt="<?php echo esc_attr__('robot_base', 'aiverse'); ?>">
                     </div>
                     </div>
                 </div>
                 <h2 class="fs__64 text-white fw-bolder text-center text-capitalize mb-3  wow fadeInDown"><?php echo wp_kses_post($title); ?></h2>
                 <nav aria-label="breadcrumb">
-                    <ol class="breadcrumb justify-content-center">
+                    <ol class="breadcrumb justify-content-center align-items-center">
                         <?php 
                             if (function_exists('bcn_display')) {
-                                        bcn_display();
+                                 bcn_display();
                             }
                         ?>
                     <!-- <li class="breadcrumb-item">
